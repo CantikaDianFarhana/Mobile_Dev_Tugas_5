@@ -25,5 +25,3 @@ Pengguna dapat menambahkan tugas baru, mengedit tugas yang sudah ada, atau mengh
 ## Teknologi yang Digunakan
 **Hive** :Database lokal ringan tanpa server.
 **Provider** :State management untuk mengatur dan memperbarui data aplikasi.
-
-
