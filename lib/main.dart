@@ -15,7 +15,7 @@ void main() async {
   // dengan path aplikasi mobile
 
   // Registrasi adapter untuk model Todo
-  // Adapter digunakan agar Hive tahu cara save dan baca objek Todo.
+  // Adapter digunakan agar Hive tahu cara save dan baca objek Todo
   if (!Hive.isAdapterRegistered(1)) {
     Hive.registerAdapter(TodoAdapter());
   }

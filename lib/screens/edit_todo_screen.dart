@@ -62,7 +62,7 @@ class _EditTodoScreenState extends State<EditTodoScreen> {
             tooltip: 'Delete',
             icon: const Icon(Icons.delete),
             onPressed: () async {
-              // Hapus todo saat ini
+              // Hapus to-do saat ini
               await context.read<TodoProvider>().remove(widget.selectedTodo);
               // Tutup halaman edit setelah dihapus
               if (mounted) Navigator.pop(context);

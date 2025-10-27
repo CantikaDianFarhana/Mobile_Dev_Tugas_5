@@ -32,7 +32,7 @@ class _AddTodoScreenState extends State<AddTodoScreen> {
 
   Future<void> _save() async {
     if (_formKey.currentState!.validate()) {
-      // Mengambil instance TodoProvider dari context
+      // Ambil instance TodoProvider dari context
       await context.read<TodoProvider>().add(_controller.text.trim());
       // mounted: memastikan widget masih aktif sebelum Navigator.pop
       if (mounted) Navigator.pop(context);

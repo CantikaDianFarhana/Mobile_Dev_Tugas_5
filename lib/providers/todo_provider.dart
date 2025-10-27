@@ -1,5 +1,4 @@
-// Provider utama untuk mengelola data To-Do dan sinkronisasi
-// antara penyimpanan lokal (Hive) dan UI
+// Provider utama untuk mengelola data To-Do dan sinkronisasi antara penyimpanan lokal (Hive) dan UI
 
 import 'package:flutter/foundation.dart';
 import 'package:hive/hive.dart';

@@ -11,7 +11,7 @@ class EmptyViews extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       // TextButton.icon: tombol dengan ikon dan teks
-      // Pengguna jadi tertarik untuk langsung membuat data baru
+      // Pengguna jadi tertarik untuk langsung buat data baru
       child: TextButton.icon(
         icon: const Icon(Icons.add),
         label: const Text('Create your first to-do'),

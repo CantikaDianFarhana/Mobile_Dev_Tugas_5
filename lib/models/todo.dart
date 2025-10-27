@@ -5,7 +5,7 @@
 import 'package:hive/hive.dart';
 
 // Setiap class model yang akan disimpan di Hive
-// harus extend dari HiveObject agar punya akses ke fungsi save(), delete(), dsb
+// harus extend dari HiveObject agar punya akses ke fungsi save(), delete(), dll
 class Todo extends HiveObject {
   String title;
   bool isDone; // Status tugas (selesai / belum)

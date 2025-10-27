@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   // Fungsi dialog konfirmasi untuk menghapus semua to-do.
-  // Menampilkan AlertDialog dengan dua tombol:
+  // Menampilkan AlertDialog dengan 2 tombol:
   // - Cancel: batal
   // - Delete all: hapus semua
   Future<bool> _confirmClearAll(BuildContext context) async {

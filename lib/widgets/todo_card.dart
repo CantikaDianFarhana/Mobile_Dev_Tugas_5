@@ -7,7 +7,7 @@ import '../models/todo.dart';
 
 // Widget stateless karena semua data dikontrol dari luar (melalui provider)
 class TodoCard extends StatelessWidget {
-  final Todo todo; // Objek Todo yang akan ditampilkan
+  final Todo todo; // Objek To-do yang akan ditampilkan
   final VoidCallback onToggle; // Callback saat status diubah (done/pending)
   final VoidCallback onDelete; // Callback untuk hapus todo
   final VoidCallback? onEdit;  // Callback opsional untuk mengedit todo
