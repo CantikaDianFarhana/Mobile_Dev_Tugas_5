@@ -8,10 +8,14 @@ import '../providers/todo_provider.dart';
 import '../widgets/todo_card.dart';
 
 class HomeScreen extends StatelessWidget {
-  static const routeName = '/home';
+  static const routeName = '/home'; // digunakan untuk navigasi bernama
 
   const HomeScreen({super.key});
 
+  // Fungsi dialog konfirmasi untuk menghapus semua to-do.
+  // Menampilkan AlertDialog dengan dua tombol:
+  // - Cancel: batal
+  // - Delete all: hapus semua
   Future<bool> _confirmClearAll(BuildContext context) async {
     final result = await showDialog<bool>(
       context: context,
@@ -38,11 +42,14 @@ class HomeScreen extends StatelessWidget {
     return result ?? false;
   }
 
+  // Widget utama halaman home
+  // Pakai Consumer<TodoProvider> agar UI otomatis
+  // diperbarui setiap kali data berubah
   @override
   Widget build(BuildContext context) {
     return Consumer<TodoProvider>(
       builder: (_, provider, __) {
-        final todos = provider.items;
+        final todos = provider.items; // ambil daftar semua to-do dari provider
 
         return Scaffold(
           backgroundColor: Colors.white,
@@ -51,6 +58,7 @@ class HomeScreen extends StatelessWidget {
             backgroundColor: Colors.white,
             surfaceTintColor: Colors.white,
             actions: [
+              // Tombol hapus semua todo
               IconButton(
                 icon: const Icon(
                   Icons.delete_sweep,
@@ -58,16 +66,21 @@ class HomeScreen extends StatelessWidget {
                 ),
                 tooltip: 'Clear all',
                 onPressed: todos.isEmpty
-                    ? null
+                    ? null // tombol nonaktif kalau tidak ada data
                     : () async {
                         final ok = await _confirmClearAll(context);
                         if (ok) {
-                          await provider.clearAll();
+                          await provider.clearAll(); // hapus semua dat
                         }
                       },
               ),
             ],
           ),
+
+          // Body utama halaman:
+          // 1. Jika Hive belum siap: menampilkan loading
+          // 2. Jika belum ada data: menampilkan tampilan kosong
+          // 3. Jika ada data: menampilkan ListView berisi TodoCard
           body: !provider.isReady
               ? const Center(child: CircularProgressIndicator())
               : todos.isEmpty
@@ -94,6 +107,8 @@ class HomeScreen extends StatelessWidget {
                         },
                       ),
                     ),
+
+          // Floating Action Button: Navigasi ke halaman tambah todo
           floatingActionButton: FloatingActionButton.extended(
             onPressed: () => Navigator.pushNamed(context, AddTodoScreen.routeName),
             icon: const Icon(Icons.add),
