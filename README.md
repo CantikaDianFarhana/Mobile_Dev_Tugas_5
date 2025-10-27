@@ -47,8 +47,8 @@ Aplikasi ini dibuat menggunakan Flutter dengan beberapa library tambahan, yaitu:
 
 ### State Management
 Provider digunakan untuk mengatur data dan memastikan tampilan selalu sinkron dengan perubahan data.
-Fungsi seperti tambah, edit, hapus, dan ubah status terdapat di `todo_provider.dart`.
-Setiap kali data berubah, `notifyListeners()` dipanggil agar halaman utama menampilkan pembaruan secara langsung.
+Fungsi seperti tambah, edit, hapus, dan ubah status terdapat di todo_provider.dart.
+Setiap kali data berubah, notifyListeners() dipanggil agar halaman utama menampilkan pembaruan secara langsung.
 
 
 ### Tampilan Aplikasi
@@ -58,3 +58,4 @@ Halaman **Edit To-Do** digunakan untuk mengubah judul tugas atau menghapusnya.
 Tampilan **EmptyViews** muncul jika belum ada data yang tersimpan, dan memberi pilihan untuk membuat to-do pertama.
 
 Warna latar kartu menyesuaikan status tugas, yaitu hijau untuk tugas yang sudah selesai dan oranye untuk yang belum selesai.
+
