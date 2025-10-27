@@ -1,6 +1,6 @@
-// Model utama untuk data To-Do.
+// Model utama untuk data To-Do
 // File ini berisi class To-do yang mewakili 1 tugas
-// dan adanya adaptor Hive supaya data bisa disimpan secara lokal.
+// Adanya adaptor Hive supaya data bisa disimpan secara lokal
 
 import 'package:hive/hive.dart';
 
@@ -23,7 +23,7 @@ class Todo extends HiveObject {
 // cara membaca & menulis objek To-do ke dalam box
 class TodoAdapter extends TypeAdapter<Todo> {
   @override
-  // Jika kamu menambah model lain (misal UserAdapter), gunakan typeId berbeda
+  // Jika menambah model lain (misal UserAdapter), gunakan typeId berbeda
   final int typeId = 1; // typeId harus unik
 
   // Fungsi untuk membaca data dari Hive (deserialization)
@@ -55,3 +55,4 @@ class TodoAdapter extends TypeAdapter<Todo> {
       ..write(obj.createdAt);
   }
 }
+
